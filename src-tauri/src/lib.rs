@@ -110,6 +110,7 @@ pub fn run() {
 
             // Sync tray state from saved settings.
             *tray_state.countdown_mode.lock().unwrap() = initial_settings.dial_countdown;
+            *tray_state.reverse_direction.lock().unwrap() = initial_settings.dial_direction;
             let tray_theme_name = match initial_settings.theme_mode.as_str() {
                 "dark" => &initial_settings.theme_dark,
                 _ => &initial_settings.theme_light,
